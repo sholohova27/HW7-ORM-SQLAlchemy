@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    container_name: lesson7_postgres
+    environment:
+      POSTGRES_USER: nataly
+      POSTGRES_PASSWORD: 123456
+      POSTGRES_DB: my-postgres
+    ports:
+      - "5433:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
